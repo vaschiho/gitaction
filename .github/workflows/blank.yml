@@ -1,11 +1,11 @@
-name: hello world
+name: Github Action Demo
 on: push
-  
+
 jobs:
-  hello:
+  action-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello Step
-        run: |
-          echo "Hello, ${{ vars.MY_NAME }}"
-          echo "Hello, ${{ secrets.DOCKER_PASSWORD }}"
+      - name: Checkout the code
+        uses: actions/checkout@v4
+      - name: Print index.html file
+        run: cat index.html
