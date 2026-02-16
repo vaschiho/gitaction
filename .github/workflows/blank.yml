@@ -1,9 +1,17 @@
 name: hello world
-on: push
-  
+on: 
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - feature/*
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
       - name: Hello Step
         run: echo "Welcome to jump one"
+
