@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevOps Demo Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .container {
+            background: white;
+            color: #333;
+            margin: 40px auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚀 DevOps Git Demo</h1>
+        <p>This is a simple HTML page for testing branches and commits.</p>
+    </header>
+
+    <div class="container">
+        <h2>Feature Branch Demo</h2>
+        <p>Edit this file in a new branch and push your changes.</p>
+        <button onclick="showMessage()">Click Me</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerText = 
+                "Great job! Your JavaScript is working 🎉";
+        }
+    </script>
+
+</body>
+</html>
