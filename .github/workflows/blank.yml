@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello Step
-        run: echo "Welcome to jump one"
+        run: echo "Hello, ${{ vars.MY_NAME }}"
