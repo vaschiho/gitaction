@@ -6,4 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello Step
-        run: echo "Hello, ${{ vars.MY_NAME }}"
+        run: |
+          echo "Hello, ${{ vars.MY_NAME }}"
+          echo "Hello, ${{ secrets.DOCKER_PASSWORD }}"
