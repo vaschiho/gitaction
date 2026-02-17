@@ -1,1 +1,15 @@
 
+name: Input Demo
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to connect to"
+        required: true
+        default: "dev"
+jobs:
+  input-demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connecting to input variables
+        run: echo "App is connecting to the ${{ github.event.inputs.environment }} environment"
