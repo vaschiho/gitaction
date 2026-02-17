@@ -12,17 +12,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.build_step.outputs.version }}
     steps:
       - name: Build Step
-        if: github.event_name == "pull_request"
+        id: build_step
         run: |
           echo "Building the application..."
           echo "version=1.0.0" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == "push"
     needs: build
+    if: ${{ github.event_name == 'push' }}
     steps:
       - name: Deploy Step
-        run: echo "Deploying the application with version ..."
+        run: echo "Deploying the application with version ${{ needs.build.outputs.version }}"
