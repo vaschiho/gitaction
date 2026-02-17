@@ -14,12 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build Step
+        if: github.event_name == "pull_request"
         run: |
           echo "Building the application..."
           echo "version=1.0.0" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
+    if: github.event_name == "push"
     needs: build
     steps:
       - name: Deploy Step
