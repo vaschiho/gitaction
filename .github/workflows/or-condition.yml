@@ -1,0 +1,20 @@
+name: Or condition Demo
+on:
+  push:
+    branches:
+      - main
+      - develop 
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Or condition demo for main and develop branches
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+        run: echo "This step will run on both main and develop branches"
+
+      - name: Or condition demo using ref_name
+        if: github.ref_name == 'main' || github.ref_name == 'develop'
+        run: echo "This step will run on both main and develop branches using ref_name"
+
+      - name: Run for all branches
+        run: echo "This step will run for all branches"
