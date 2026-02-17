@@ -19,5 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Connecting to input variables
-        run: echo "App is connecting to the ${{ github.event.inputs.environment }} environment"
-        run: echo "Deploying artifact with tag ${{ github.event.inputs.artifact_tag }}"
+        run: | 
+          echo "App is connecting to the ${{ github.event.inputs.environment }} environment"
+          echo "Deploying artifact with tag ${{ github.event.inputs.artifact_tag }}"
