@@ -1,23 +1,23 @@
 name: If Demo
-
-on:
-  push:
-    branches:
-      - main
-      - develop
-
+on: push
+  branches:
+    - main
+    - develop
 jobs:
   demo:
     runs-on: ubuntu-latest
-
     steps:
-      - name: If condition demo (main branch)
+      - name: If condition demo
         if: github.ref == 'refs/heads/main'
         run: echo "This step will only run on the main branch"
 
-      - name: If condition demo (develop branch)
+      - name: If condition demo for develop branch
         if: github.ref == 'refs/heads/develop'
         run: echo "This step will only run on the develop branch"
-
-      - name: Run for all branches
+      - name: If condition demo for main
+        if: github.ref_name == 'main'
+        run: echo "This step will only run on the main branch using ref_name"
+        
+      - name: run for all branches
         run: echo "This step will run for all branches"
+        
