@@ -1,0 +1,20 @@
+name: outputs demo
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.step-one.outputs.version }}
+    steps:
+      - name: Build Step
+        id: step-one
+        run: echo "version=1.0.0" >> $GITHUB_OUTPUT
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: deploy
+        run: echo "The version is ${{ needs.build.outputs.version }}"
