@@ -13,7 +13,6 @@ on:
       artifact_tag:
         description: "Tag to deploy"
         required: true
-        default: "latest"
 jobs:
   input-demo-job:
     runs-on: ubuntu-latest
