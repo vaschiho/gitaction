@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Connecting to context variables
-        run: echo "This workflow is running on the ${{ github.event_name }} event"
-        run: echo "The workflow was triggered by ${{ github.actor }}"
-        run: echo "The workflow is running on the ${{ github.ref }} branch"
-        run: echo "The workflow is running on the ${{ github.repository }} repository"  
+        run: |
+          echo "This workflow is running on the ${{ github.event_name }} event"
+          echo "The workflow was triggered by ${{ github.actor }}"
+          echo "The workflow is running on the ${{ github.ref }} branch"
+          echo "The workflow is running on the ${{ github.repository }} repository"  
