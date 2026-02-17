@@ -10,3 +10,5 @@ jobs:
           echo "The workflow was triggered by ${{ github.actor }}"
           echo "The workflow is running on the ${{ github.ref }} branch"
           echo "The workflow is running on the ${{ github.repository }} repository"  
+      - name: Print all variable under github context
+        run: echo "${{ toJson(github) }}"
