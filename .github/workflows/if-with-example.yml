@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        run: echo "Checking out code..."
+        run: |
+          echo "Checking out code..."
+          exit 1 # Simulating a failure in quality check .
 
   dev_deploy:
     if: github.ref_name == 'develop' && github.event_name == 'push'
